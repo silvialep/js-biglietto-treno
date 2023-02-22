@@ -28,8 +28,7 @@ if(isNaN(userAge)) {
 document.writeln(`L'utente ha ${userAge} anni`);
 
 let userKm = parseFloat(prompt(`Quanti chilometri (espressi in cifre) vuoi percorrere?`));
-document.writeln(`e vuole percorrere ${userKm.toFixed(2)} chilometri.
-`);
+document.writeln(`e vuole percorrere ${userKm.toFixed(2)} chilometri.`);
 let ticketPrice = parseFloat(userKm * 0.21);
 console.log(ticketPrice);
 if(userAge < 18) {
