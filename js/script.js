@@ -22,15 +22,28 @@
 let userAge = parseInt(prompt(`Ciao, quanti anni hai (espressi in cifre)?`));
 if(isNaN(userAge)) {
   let userAge = parseInt(prompt(`Scusa, non ho capito. Quanti anni hai (espressi in cifre)?`));
-
+  if (isNaN(userAge)) {
+    alert(`Errore. Se non vengono inserite cifre non è possibile continuare. Ricarica la pagina e riprova.`);
+    window.location.reload();
+  }
 }
 
 document.writeln(`L'utente ha ${userAge} anni`);
 
 let userKm = parseFloat(prompt(`Quanti chilometri (espressi in cifre) vuoi percorrere?`));
+if (isNaN(userKm)) {
+  let userKm = parseInt(prompt(`Scusa, non ho capito. Quanti chilometri (espressi in cifre) vuoi percorrere?`));
+  if (isNaN(userKm)) {
+    alert(`Errore. Se non vengono inserite cifre non è possibile continuare. Ricarica la pagina e riprova.`);
+    window.location.reload();
+  }
+}
+
 document.writeln(`e vuole percorrere ${userKm.toFixed(2)} chilometri.`);
+
 let ticketPrice = parseFloat(userKm * 0.21);
 console.log(ticketPrice);
+
 if(userAge < 18) {
   let discountMinors = ticketPrice - (ticketPrice / 100 * 20);
   document.writeln(`Il prezzo finale del biglietto richiesto è di ${discountMinors.toFixed(2)} €`);
